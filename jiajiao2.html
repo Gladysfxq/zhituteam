@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<!-- 	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.14/dist/vue.js"></script> -->
+    <script src="./js/vue.js"></script>
+    <link rel="stylesheet" href="./css/jiajiao2.css">
+    <script type="text/javascript" src="./js/jquery-3.2.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/js/swiper.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <header>
+        <div class="top clearfix">
+    		 <img class="logo-img" src="./image/zhi.png">
+    		 <div class="right clearfix">
+    		     <span>我的</span>
+    		     <img src="./image/wo.png">
+             </div>
+        </div>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+				<a class="swiper-slide" href="javascript: void(0)" v-for="item in banner" >
+					<img :src="item.image">
+				</a>
+            </div>
+			<div class="swiper-pagination"></div>      
+        </div>
+        <div class="header-menu">
+            <ul >
+                <li v-for="item in subjectList">
+                	<a :href="'xiangqing.html?id='+item.id+'&name='+item.name+''" >
+	                    <span class="pic"><img :src="item.icon"></span>
+	                    <span class="subject">{{ item.name}}</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+     <div class="content">
+         <p class="hot">热门教师</p>
+     </div>
+    <div class="teachers clearfix"> 
+        <div v-for="item in list">
+            <a :href="'jiaoshiziliao.html?id='+item.id+''">
+                 <img :src="item.image" class="tec-pic">
+                 <div class="tec-info clearfix"> 
+                     <p class="tec-name">{{ item.name }}</p>
+                     <div v-for="subItem in item.subject" class="class-info">{{ subItem.label }}</div>
+                     <span v-for="timeItem in item.grade" class="grade">
+                         <span class="grade-info">{{ timeItem.label }}</span>
+                     </span>
+                     <span class="tip">授课{{ item.teach_time }}小时</span></p>
+                     <p class="year">{{ item.teach_year }}年教龄</p>
+                     <p class="special">
+                         <span class="tipian"></span>
+                         <span v-for="jobItem in item.extend_tag" class="special-info">{{ jobItem.label}}</span>
+                    </p>
+                </div>
+            </a>                    
+        </div>
+    </div>
+</div>
+</body>
+    <script src="./js/jiajiao2.js"></script>
+</html>

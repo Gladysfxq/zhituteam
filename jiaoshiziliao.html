@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>教师资料</title>
+	<script src="./js/vue.js"></script>
+    <link rel="stylesheet"  href="./css/jiaoshi.css">
+    <script type="text/javascript" src="./js/jquery-3.2.0.min.js"></script>
+</head>
+<body>
+    <div id="familyTeacher">
+		<div class="teachers clearfix">
+		    <div>
+                 <img :src="list.image" class="tec-pic">
+                 <div class="tec-info clearfix"> 
+                     <p class="tec-name">{{ list.name }}</p>
+                     <div v-for="subItem in list.subject" class="class-info">{{ subItem.label }}</div>
+                     <span v-for="timeItem in list.grade" class="grade">
+                         <span class="grade-info">{{ timeItem.label }}</span>
+                     </span>
+                      <span class="money">{{ list.price  }}</span>
+                     <p class="year">{{ list.teach_year }}年教龄</p>
+                     <p class="special">
+                         <span class="tipian"></span>
+                         <span v-for="jobItem in list.extend_tag" class="special-info">{{ jobItem.label }}</span>
+                    </p>
+                    <i class="show">授课{{ list.teach_time }}小时</i>
+                </div>                   
+            </div>
+        </div>
+        <div class="info-box">
+             <div class="">
+                 <p class="title introduce">个人简介</p>
+                 <div class="content">
+                      <p>{{ list.intro }}</p>
+                 </div>
+             </div>
+             <div> 
+                <p class="title introduce">教学经历</p>
+                <div v-for="item in list.teacher_experience" class="content">
+                   <p>{{ item.content}}</p>
+                </div>
+             </div>
+             <div>
+               <!--  <img src="./image/a.png" class="photo"> -->
+                <p class="title reward">成功案例</p>
+                <div class="content teach-case-content" v-for="item in list.teacher_case">
+                     <p class="teach-title">{{ item.title}}</p> 
+                     <p>{{ item.content }}</p>
+                </div>
+                <!-- <div class="content">
+                <p class="teach-title">刘同学，提分22分</p> 
+                <p>学生一直以来是在原地踏步，希望能更进一步，上课后发现学生学习停留在知识表层，只知道结果，没有继续深入了解结果产生的本质原因，学习中更多的是去记忆，没有形成知识脉络，不能应用学过的知识去解析试题。经过几次课，学生学习有了明显提升，给学生一个知识点，学生能引出一条条知识网络，实验等大题的解题的思路非常好，对知识的拔高拓展做得很好。</p>
+                </div> -->
+             </div>
+        </div>
+        <div class="order-line">
+             <div class="order-text">满意就预约吧</div> <hr>
+        </div>
+        <div class="order-btn">
+             <div class="btn collect"><span> 收藏</span></div> 
+             <div class="btn order-now">预约试讲<div>
+        </div>
+    </div>
+     <script src="./js/jiaoshi.js"></script>
+</body>
+</html>

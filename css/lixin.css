@@ -1,0 +1,62 @@
+html,body,p,ul,li{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background-color: #fff;
+	font-family: PingFangSC-Light;
+}
+body{
+	font-size: 62.5%;
+}
+ul{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+.clearfix:after{
+	display: block;
+	clear: both;
+	content: "";
+	height: 0;
+}
+.head{
+	margin: 0;
+	background: #F9F9F9;
+    z-index: 2;
+}
+.similar{
+	padding: 2.5rem 2rem;
+	font-size: 1.5rem;
+    color: #323232;
+    letter-spacing: -0.36px;
+}
+.ask li{
+	padding: 1rem 2rem;
+}
+.ask a{
+	opacity: 0.8;
+    font-family: PingFangSC-Light;
+    font-size: 1.5rem;
+    color: #323232;
+    letter-spacing: 0;
+}
+.ask .tu{
+	display: inline-block;
+	margin-right: 1rem;
+	background: #1B91E0;
+	width: 1rem;
+	height: 1rem;
+	border-radius: 100%;
+}
+.use{
+	display: inline-block;
+	margin-top: 3rem;
+	margin-left: 2rem;
+	opacity: 0.8;
+    font-family: PingFangSC-Light;
+    font-size: 1.4rem;
+    color: #666666;
+    letter-spacing: 0;
+}
